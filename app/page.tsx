@@ -1,3 +1,5 @@
+import { NavLinks } from './nav-client';
+
 export const services = [
   {
     title: 'Brand & product strategy',
@@ -51,9 +53,7 @@ export default function Home() {
         </a>
 
         <nav className="main-nav" aria-label="Main navigation">
-          <a href="#services">Services</a>
-          <a href="#approach">About</a>
-          <a href="#contact">Contact</a>
+          <NavLinks />
         </nav>
 
         <a className="button button-primary" href="/start-a-project">
@@ -62,11 +62,24 @@ export default function Home() {
       </header>
 
       <section className="hero" id="top">
+        {/* ── LEFT: copy ──────────────────────────── */}
         <div className="hero-copy">
           <p className="eyebrow">Digital product studio - Sri Lanka</p>
-          <div className="hero-branding">
-            <img src="/serendib-code-logo.png" alt="Serendib Code logo" className="hero-logo" />
-          </div>
+
+          <h1 className="hero-wordmark">
+            <span className="hero-word-reveal">Serendib</span>
+            <span className="hero-word-reveal hero-wordmark-accent"> Code</span>
+            <span className="hero-cursor" aria-hidden="true" />
+          </h1>
+
+          <p className="hero-tagline-strip">
+            <span className="hero-tagline-item">BUILD</span>
+            <span className="hero-tagline-dot" aria-hidden="true" />
+            <span className="hero-tagline-item">INNOVATE</span>
+            <span className="hero-tagline-dot" aria-hidden="true" />
+            <span className="hero-tagline-item">TRANSFORM</span>
+          </p>
+
           <p className="hero-description">
             We design and build products that feel clear, premium, and ready for real-world growth.
             Strategy, storytelling, UX, development, and security all working as one.
@@ -91,70 +104,49 @@ export default function Home() {
           </ul>
         </div>
 
-        <div className="hero-visual" aria-label="Studio overview preview">
-          <div className="visual-card">
-            <div className="visual-header">
-              <span className="dot dot-one" />
-              <span className="dot dot-two" />
-              <span className="dot dot-three" />
+        {/* ── RIGHT: animated tech orb scene ──────── */}
+        <div className="hero-visual" aria-label="Tech animation">
+          <div className="hero-orb-scene" aria-hidden="true">
+            {/* ── window chrome header ── */}
+            <div className="scene-header">
+              <div className="scene-header-dots">
+                <span className="dot dot-one" />
+                <span className="dot dot-two" />
+                <span className="dot dot-three" />
+              </div>
+              <p className="scene-brand-name">
+                Serendib<span>Code</span>
+              </p>
+              <span className="scene-live-badge">
+                <span className="scene-live-dot" />
+                online
+              </span>
             </div>
 
-            <div className="visual-content">
-              <div className="mini-panel panel-left">
-                <span className="mini-label">Launch pulse</span>
-                <strong>+48%</strong>
-                <small>engagement uplift</small>
-              </div>
+            <div className="scene-grid" />
 
-              <div className="mini-panel panel-main">
-                <div className="panel-header-row">
-                  <span className="mini-label">Growth sprint</span>
-                  <span className="panel-tag">Live</span>
-                </div>
-
-                <div className="chart-bars" aria-hidden="true">
-                  <span style={{ height: '38%' }} />
-                  <span style={{ height: '58%' }} />
-                  <span style={{ height: '74%' }} />
-                  <span style={{ height: '52%' }} />
-                  <span style={{ height: '88%' }} />
-                  <span style={{ height: '100%' }} />
-                </div>
-              </div>
+            {/* central orb */}
+            <div className="scene-orb">
+              <span className="scene-orb-icon">&lt;/&gt;</span>
+              <div className="scene-orb-pulse" />
+              <div className="scene-orb-pulse orb-pulse-2" />
             </div>
 
-            <div className="visual-badges">
-              <div className="floating-card">
-                <span>Design system</span>
-                <strong>01</strong>
-              </div>
-              <div className="floating-card">
-                <span>UX design</span>
-                <strong>02</strong>
-              </div>
-              <div className="floating-card">
-                <span>Product build</span>
-                <strong>03</strong>
-              </div>
-            </div>
+            {/* orbit rings */}
+            <div className="scene-ring scene-ring-1"><span className="scene-dot" /></div>
+            <div className="scene-ring scene-ring-2"><span className="scene-dot" /></div>
+            <div className="scene-ring scene-ring-3"><span className="scene-dot" /></div>
+
+            {/* floating code tags */}
+            <div className="scene-code scene-code-1">const stack = &#39;modern&#39;;</div>
+            <div className="scene-code scene-code-2">&lt;Innovation /&gt;</div>
+            <div className="scene-code scene-code-3">$ deploy --prod</div>
+            <div className="scene-code scene-code-4">{'// ship it 🚀'}</div>
           </div>
         </div>
       </section>
 
-      <section className="feature-strip">
-        <div className="feature-item">
-          <span className="feature-kicker">Strategy</span>
-          <h3>Clarity before code.</h3>
-        </div>
-        <div className="feature-item">
-          <span className="feature-kicker">Design</span>
-          <h3>Simple ideas, polished execution.</h3>
-        </div>
-        <div className="feature-item">
-          <span className="feature-kicker">Delivery</span>
-          <h3>Built for momentum and trust.</h3>
-        </div>
-      </section>
+
 
       <section className="services section" id="services">
         <div className="section-head">
@@ -198,10 +190,10 @@ export default function Home() {
       <section className="cta-panel section" id="contact">
         <div className="cta-copy">
           <p className="section-label">Start something</p>
-          <h2>Let's build the next chapter of your product.</h2>
+          <h2>Let&apos;s build the next chapter of your product.</h2>
           <p>
             Tell us what you are building, what success looks like, and where you need support.
-            We'll reply with a clear next step.
+            We&apos;ll reply with a clear next step.
           </p>
           <p>Tel No: <a href="tel:+94751668705">+94 75 166 8705</a></p>
           <p>Location: Kandy, Colombo, Sri Lanka</p>
